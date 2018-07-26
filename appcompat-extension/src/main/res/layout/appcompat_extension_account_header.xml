@@ -16,7 +16,12 @@
 -->
 
 <merge xmlns:android="http://schemas.android.com/apk/res/android"
-       xmlns:app="http://schemas.android.com/apk/res-auto">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:parentTag="android.widget.RelativeLayout"
+    tools:layout_width="match_parent"
+    tools:layout_height="@dimen/account_header_height"
+    tools:background="@tools:sample/backgrounds/scenic">
 
     <com.tr4android.support.extension.widget.CircleImageView
         android:id="@+id/account_header_icon_primary"
@@ -28,7 +33,8 @@
         android:layout_marginLeft="@dimen/account_header_icon_margin"
         android:layout_marginStart="@dimen/account_header_icon_margin"
         android:layout_marginTop="@dimen/account_header_icon_margin"
-        android:clickable="true"/>
+        android:clickable="true"
+        tools:src="@tools:sample/avatars"/>
 
     <com.tr4android.support.extension.widget.CircleImageView
         android:id="@+id/account_header_icon_secondary_second"
@@ -40,7 +46,8 @@
         android:layout_marginEnd="@dimen/account_header_icon_margin"
         android:layout_marginRight="@dimen/account_header_icon_margin"
         android:layout_marginTop="@dimen/account_header_icon_margin"
-        android:clickable="true"/>
+        android:clickable="true"
+        tools:src="@tools:sample/avatars"/>
 
     <com.tr4android.support.extension.widget.CircleImageView
         android:id="@+id/account_header_icon_secondary_first"
@@ -53,7 +60,8 @@
         android:layout_marginTop="@dimen/account_header_icon_margin"
         android:layout_toLeftOf="@+id/account_header_icon_secondary_second"
         android:layout_toStartOf="@+id/account_header_icon_secondary_second"
-        android:clickable="true"/>
+        android:clickable="true"
+        tools:src="@tools:sample/avatars"/>
 
     <LinearLayout
         android:id="@+id/account_header_text"
@@ -62,14 +70,15 @@
         android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_toLeftOf="@+id/account_header_dropdown"
-        android:layout_toStartOf="@+id/account_header_dropdown"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
         android:gravity="center_vertical"
         android:orientation="vertical"
         android:paddingEnd="@dimen/account_header_text_padding"
         android:paddingLeft="@dimen/account_header_text_padding"
         android:paddingRight="@dimen/account_header_text_padding"
-        android:paddingStart="@dimen/account_header_text_padding">
+        android:paddingStart="@dimen/account_header_text_padding"
+        android:background="?attr/selectableItemBackground">
 
         <TextView
             android:id="@+id/account_header_text_name"
@@ -79,7 +88,8 @@
             android:lines="1"
             android:singleLine="true"
             android:textColor="?android:attr/textColorPrimaryInverse"
-            android:textSize="@dimen/account_header_text_size"/>
+            android:textSize="@dimen/account_header_text_size"
+            tools:text="@tools:sample/full_names"/>
 
         <TextView
             android:id="@+id/account_header_text_email"
@@ -89,7 +99,8 @@
             android:lines="1"
             android:singleLine="true"
             android:textColor="?android:attr/textColorSecondaryInverse"
-            android:textSize="@dimen/account_header_text_size"/>
+            android:textSize="@dimen/account_header_text_size"
+            tools:text="test@gmail.com"/>
     </LinearLayout>
 
     <ImageView
@@ -99,7 +110,6 @@
         android:layout_alignParentBottom="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
-        android:background="?attr/selectableItemBackgroundBorderless"
         android:scaleType="centerInside"
         android:tint="@android:color/white"
         app:srcCompat="@drawable/ic_arrow_drop_down_black_24dp"/>

@@ -150,7 +150,9 @@ public class AccountHeaderView extends RelativeLayout {
         mDropdownDrawable.setStartInterpolator(AnimationUtils.ACCELERATE_DECELERATE_INTERPOLATOR);
         mDropdownDrawable.setReverseInterpolator(AnimationUtils.ACCELERATE_DECELERATE_INTERPOLATOR);
         mDropdownView.setImageDrawable(mDropdownDrawable);
-        mDropdownView.setOnClickListener(mShowAccountClickListener);
+
+        View accountHeaderView = findViewById(R.id.account_header_text);
+        accountHeaderView.setOnClickListener(mShowAccountClickListener);
     }
 
     // Handles an account click passed on by the account list adapter
