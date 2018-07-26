@@ -22,6 +22,7 @@ import android.os.Build;
 import android.support.design.internal.NavigationMenuView;
 import android.support.v7.view.ContextThemeWrapper;
 import android.support.v7.widget.RecyclerView;
+import android.text.TextUtils;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -278,7 +279,7 @@ public class AccountHeaderView extends RelativeLayout {
             AccountUtils.applyAccountEmail(primaryAccount, mEmailView);
             mPrimaryIconView.setVisibility(VISIBLE);
             mNameView.setVisibility(VISIBLE);
-            mEmailView.setVisibility(VISIBLE);
+            mEmailView.setVisibility(TextUtils.isEmpty(primaryAccount.getEmail()) ? GONE : VISIBLE);
         }
         // first secondary account
         if (accountCount <= 1) {
