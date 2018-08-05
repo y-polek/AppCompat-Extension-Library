@@ -25,6 +25,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.tr4android.appcompat.extension.R;
+import com.tr4android.support.extension.utils.TextUtils;
 import com.tr4android.support.extension.widget.CircleImageView;
 
 /**
@@ -106,14 +107,14 @@ public class AccountUtils {
                 }
             } else {
                 if (placeholderCircleColor == -1) {
-                    iv.setPlaceholder(CircleImageView.retrieveLetter(account.getName()));
+                    iv.setPlaceholder(TextUtils.abbreviate(account.getName()));
                 } else {
-                    iv.setPlaceholder(CircleImageView.retrieveLetter(account.getName()), placeholderCircleColor);
+                    iv.setPlaceholder(TextUtils.abbreviate(account.getName()), placeholderCircleColor);
                 }
             }
         } else {
             // fallback
-            iv.setPlaceholder(CircleImageView.retrieveLetter(account.getName()));
+            iv.setPlaceholder(TextUtils.abbreviate(account.getName()));
         }
     }
 
