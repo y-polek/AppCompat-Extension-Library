@@ -34,6 +34,8 @@
         android:layout_marginStart="@dimen/account_header_icon_margin"
         android:layout_marginTop="@dimen/account_header_icon_margin"
         android:clickable="true"
+        android:focusable="true"
+        app:placeholderTextSize="24dp"
         tools:src="@tools:sample/avatars"/>
 
     <com.tr4android.support.extension.widget.CircleImageView
@@ -47,6 +49,8 @@
         android:layout_marginRight="@dimen/account_header_icon_margin"
         android:layout_marginTop="@dimen/account_header_icon_margin"
         android:clickable="true"
+        android:focusable="true"
+        app:placeholderTextSize="20dp"
         tools:src="@tools:sample/avatars"/>
 
     <com.tr4android.support.extension.widget.CircleImageView
@@ -61,7 +65,9 @@
         android:layout_toLeftOf="@+id/account_header_icon_secondary_second"
         android:layout_toStartOf="@+id/account_header_icon_secondary_second"
         android:clickable="true"
-        tools:src="@tools:sample/avatars"/>
+        android:focusable="true"
+        app:placeholderTextSize="20dp"
+        tools:src="@tools:sample/avatars" />
 
     <LinearLayout
         android:id="@+id/account_header_text"
