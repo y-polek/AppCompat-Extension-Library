@@ -17,8 +17,10 @@
 package com.tr4android.support.extension.widget;
 
 import android.content.Context;
+import android.content.res.ColorStateList;
 import android.content.res.TypedArray;
 import android.os.Build;
+import android.support.annotation.Nullable;
 import android.support.design.internal.NavigationMenuView;
 import android.support.v7.view.ContextThemeWrapper;
 import android.support.v7.widget.RecyclerView;
@@ -253,6 +255,10 @@ public class AccountHeaderView extends RelativeLayout {
             addViewToParent();
         }
         mIsShowingAccountList = false;
+    }
+
+    public void setItemIconTintList(@Nullable ColorStateList tint) {
+        mAccountListAdapter.setIconTintList(tint);
     }
 
     @Override

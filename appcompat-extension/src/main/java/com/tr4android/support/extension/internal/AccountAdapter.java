@@ -23,6 +23,7 @@ import android.graphics.drawable.ShapeDrawable;
 import android.graphics.drawable.StateListDrawable;
 import android.graphics.drawable.shapes.OvalShape;
 import android.os.Build;
+import android.support.annotation.Nullable;
 import android.support.v4.graphics.drawable.DrawableCompat;
 import android.support.v7.widget.AppCompatDrawableManager;
 import android.support.v7.widget.RecyclerView;
@@ -58,6 +59,8 @@ public class AccountAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
     private boolean mShowAccountAdd;
     private boolean mShowAccountManage;
     private boolean mShowCheckBoxes;
+
+    private ColorStateList iconTintList;
 
     private final View.OnClickListener mAccountClickListener = new View.OnClickListener() {
         @Override
@@ -126,6 +129,9 @@ public class AccountAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
                 accountViewHolder.iconView.setCircleImageEnabled(false);
                 accountViewHolder.checkView.setVisibility(View.GONE);
                 accountViewHolder.iconView.setImageResource(R.drawable.ic_settings_black_24dp);
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                    accountViewHolder.iconView.setImageTintList(iconTintList);
+                }
                 accountViewHolder.nameView.setText(R.string.account_header_list_item_manage_accounts);
                 accountViewHolder.infoLayout.setVisibility(View.GONE);
             } else {
@@ -133,6 +139,9 @@ public class AccountAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
                 accountViewHolder.iconView.setCircleImageEnabled(false);
                 accountViewHolder.checkView.setVisibility(View.GONE);
                 accountViewHolder.iconView.setImageResource(R.drawable.ic_add_black_24dp);
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                    accountViewHolder.iconView.setImageTintList(iconTintList);
+                }
                 accountViewHolder.nameView.setText(R.string.account_header_list_item_add_account);
                 accountViewHolder.infoLayout.setVisibility(View.GONE);
             }
@@ -285,5 +294,9 @@ public class AccountAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
             if (isChecked(i)) checked.add(mAccounts.get(i));
         }
         return checked;
+    }
+
+    public void setIconTintList(@Nullable ColorStateList tint) {
+        iconTintList = tint;
     }
 }
